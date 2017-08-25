@@ -1,4 +1,4 @@
-# CG-First-Task
+* CG-First-Task
 
 At building.
 ---
