@@ -1,6 +1,6 @@
-# CG-Assignments
+# CG-First-Task
 
-At building!
+At building.
 ---
 
 Toolkit: OpenGL | Glut | Computer Graphic | C++
