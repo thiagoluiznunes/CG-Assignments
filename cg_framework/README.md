@@ -1,14 +1,14 @@
 # CG-Assignments
 
-This is the first article I will be bringing for your guys related to the development of applications based on Node.js, Express and MongoDB. The article consists of building a REST API application, its description and using good programming practices.
+At building!
 ---
 
 Toolkit: OpenGL | Glut | Computer Graphic | C++
 
 ### Requirements ###
 
-* **[A Unix Environment](https://www.ubuntu.com/)** :white_check_mark:
-* **[C++ Compiler with support for standard C11]()** :white_check_mark:
+* *[A Unix Environment](https://www.ubuntu.com/)** :white_check_mark:
+* *[C++ Compiler with support for standard C11]()** :white_check_mark:
 
 ### Build Instructions ###
 
@@ -20,10 +20,20 @@ Toolkit: OpenGL | Glut | Computer Graphic | C++
 
 3. Invoke the makefile
 
+```
 $> git clone https://github.com/ThiagoLuizNunes/CG-Assignments.git
 $> cd cg-framework
-$> make all
-  
+$> make 
+```
+
+## Execution Instructions ##
+* In the cg-framework.
+* Run the created executable file.
+
+```
+$> ./cg-first-task
+```
+
 ## Contributors
 
 * Thiago Luiz Pereira Nunes ([ThiagoLuizNunes](https://github.com/ThiagoLuizNunes)) thiago.luiz@lavid.ufpb.br
