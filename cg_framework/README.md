@@ -1,16 +1,15 @@
-* CG-First-Task
-
-At building.
+# CG-First-Task
 ---
+At building
 
 Toolkit: OpenGL | Glut | Computer Graphic | C++
 
-### Requirements ###
+## Requirements ###
 
 * *[A Unix Environment](https://www.ubuntu.com/)** :white_check_mark:
 * *[C++ Compiler with support for standard C11]()** :white_check_mark:
 
-### Build Instructions ###
+## Build Instructions ###
 
 **Obs.: The following instructions were tested on Ubuntu distribution.**
 
