@@ -1,7 +1,7 @@
 CC = g++
 
 all:
-	$(CC) main.cpp -lglut -lGLU -lGL -I. -o cg-first-task
+	$(CC) main.cpp -lglut -lGLU -lGL -I. -o cgtask
 
 clean:
-	rm cg-first-task
+	rm cgtask

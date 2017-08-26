@@ -7,9 +7,13 @@ void MyGlDraw(void)
 	//*************************************************************************
 	// Chame aqui as funções do mygl.h
 	//*************************************************************************
+
+	int height, width;
 	int red, green, blue, alpha;
 
-	std::cout << "Do type the color:" << '\n';
+	std::cout << "Type the coordinates height and width at sequences: " << '\n';
+	std::cin >> height >> width;
+	std::cout << "Type the color:" << '\n';
 	std::cin >> red >> green >> blue >> alpha;
 
 	std::vector<int> rgbaVector;
@@ -18,7 +22,7 @@ void MyGlDraw(void)
 	rgbaVector.push_back(blue);
 	rgbaVector.push_back(alpha);
 
-	printPixel(150, 50, rgbaVector);
+	putPixel(height, width, rgbaVector);
 
 }
 //-----------------------------------------------------------------------------
