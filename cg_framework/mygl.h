@@ -8,20 +8,20 @@
 // Defina aqui as suas funções gráficas
 //*****************************************************************************
 
-void putPixel(int x, int y, std::vector<int>& myRGBA) {
+void putPixel(int xWidth, int yHeight, std::vector<int>& myRGBA) {
   for (size_t i = 0; i < 4; i++) {
-    FBptr[x*4+i + y*4*IMAGE_WIDTH] = myRGBA.at(i);
+    FBptr[xWidth*4+i + yHeight*4*IMAGE_WIDTH] = myRGBA.at(i);
   }
 }
 
 void drawLine(std::vector<int>& coordinates, std::vector<int>& myRGBA) {
-  if(coordinates.at(0) == coordinates.at(2)) {
-    int s = coordinates.at(1) - coordinates.at(3);
+  if(coordinates.at(1) == coordinates.at(3)) {
+    int s = coordinates.at(0) - coordinates.at(2);
     if(s < 0) {
       s *= -1;
     }
     for (size_t i = 0; i < s; i++) {
-      putPixel(coordinates.at(0), coordinates.at(1) + i, myRGBA);
+      putPixel(coordinates.at(0) + i, coordinates.at(1), myRGBA);
     }
   }
 }

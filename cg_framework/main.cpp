@@ -21,10 +21,10 @@ void MyGlDraw(void)
 	// std::cout << "Type the color:" << '\n';
 	// std::cin >> red >> green >> blue >> alpha;
 
+	coordinatesVector.push_back(100);
 	coordinatesVector.push_back(50);
-	coordinatesVector.push_back(200);
+	coordinatesVector.push_back(500);
 	coordinatesVector.push_back(50);
-	coordinatesVector.push_back(150);
 
 
 	rgbaVector.push_back(255);
@@ -32,7 +32,7 @@ void MyGlDraw(void)
 	rgbaVector.push_back(255);
 	rgbaVector.push_back(1);
 
-	// putPixel(height, width, rgbaVector);
+	// putPixel(width, height, rgbaVector);
 	drawLine(coordinatesVector, rgbaVector);
 
 }
