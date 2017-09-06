@@ -39,7 +39,7 @@ void MyGlDraw(void)
 	// m = (y2-y1)
 	// 		(x2-x1)
 	// primeiro quadrante = x2-x1 >= y2-y1
-	rgbaVector.push_back(255);
+	rgbaVector.push_back(0);
 	rgbaVector.push_back(0);
 	rgbaVector.push_back(0);
 	rgbaVector.push_back(1);
@@ -49,15 +49,6 @@ void MyGlDraw(void)
 	int j;
 	for (size_t i = 0; i < 500; i++) {
 		coordinatesVector.at(2) = 500-i;
-		if(i < 255) {
-			rgbaVector.at(0) = 255-i;
-			rgbaVector.at(1) = i;
-		} else {
-			rgbaVector.at(0) = 0;
-			rgbaVector.at(1) = 250-j;
-			rgbaVector.at(2) = j;
-			j++;
-		}
 		ddaAlgorithm(coordinatesVector, rgbaVector);
 	}
 		// ddaAlgorithm(coordinatesVector, rgbaVector);

@@ -39,8 +39,17 @@ void ddaAlgorithm(std::vector<int>& coordinates, std::vector<int>& myRGBA) {
 
   float m = dY/dX;
   float b = y1 - (m*x1);
-
+  int j;
   for (size_t i = 0; i < dX; i++) {
+    if(i < dX/2) {
+			myRGBA.at(0) = 255-i;
+			myRGBA.at(1) = i;
+		} else {
+			myRGBA.at(0) = 0;
+			myRGBA.at(1) = 250-j;
+			myRGBA.at(2) = j;
+			j++;
+		}
     putPixel(x1+i, round(m*(x1+i)+b), myRGBA);
   }
 }
