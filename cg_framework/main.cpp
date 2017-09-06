@@ -15,12 +15,6 @@ void MyGlDraw(void)
 
 	std::vector<int> coordinatesVector;
 	std::vector<int> rgbaVector;
-
-	// std::cout << "Type the coordinates height and width at sequences: " << '\n';
-	// std::cin >> height >> width;
-	// std::cout << "Type the color:" << '\n';
-	// std::cin >> red >> green >> blue >> alpha;
-
 	// y
 	// ^
 	// |
@@ -47,13 +41,11 @@ void MyGlDraw(void)
 	// putPixel(width, height, rgbaVector);
 	// drawLine(coordinatesVector, rgbaVector);
 	int j;
-	for (size_t i = 0; i < 500; i++) {
-		coordinatesVector.at(2) = 500-i;
+	// for (size_t i = 0; i < 500; i++) {
+	// 	coordinatesVector.at(2) = 500-i;
+	// 	ddaAlgorithm(coordinatesVector, rgbaVector);
+	// }
 		ddaAlgorithm(coordinatesVector, rgbaVector);
-	}
-		// ddaAlgorithm(coordinatesVector, rgbaVector);
-
-
 }
 //-----------------------------------------------------------------------------
 int main(int argc, char **argv)
