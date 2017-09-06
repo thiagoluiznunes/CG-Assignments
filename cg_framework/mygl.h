@@ -30,12 +30,12 @@ void drawLine(std::vector<int>& coordinates, std::vector<int>& myRGBA) {
 }
 void ddaAlgorithm(std::vector<int>& coordinates, std::vector<int>& myRGBA) {
   int x1 = coordinates.at(0);
-  int x2 = coordinates.at(2);
   int y1 = coordinates.at(1);
+  int x2 = coordinates.at(2);
   int y2 = coordinates.at(3);
 
-  int dX = x2-x1;
-  int dY = y2-y1;
+  float dX = x2-x1;
+  float dY = y2-y1;
 
   float m = dY/dX;
   float b = y1 - (m*x1);
