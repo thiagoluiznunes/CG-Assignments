@@ -6,7 +6,8 @@ Rasterization Algorithms
 
 * [Introduction](#introduction)
 * [Points Rasterization](#points-rasterization)
-* [Lines Rasterization](#lines-rasterization)
+* [Digital Differential Analyzer](#digital-differential-analyzer)
+* [Bresenham Algorithm](#bresenham-algorithm)
 * []()
 * []()
 
@@ -34,7 +35,7 @@ void putPixel(int xWidth, int yHeight, std::vector<int>& myRGBA) {
 	}
 }
 ```
-The function above describe:
+The function above describes:
 1. xWidth is the position of the pixel related the screen width.
 2. yHeight is the position of the pixel related the screen height.
 3. myRGBA is the color vector related the pixel.
@@ -52,7 +53,7 @@ The RGBA standard  to require four bytes. Each byte it is destined for the prima
 ### Lines Rasterization
 
 #### Digital Differential Analyzer (DDA)
-Digital Differential Analyzer (DDA) algorithm is the simple line generation algorithm which is explained step by step here.
+Digital Differential Analyzer (DDA) algorithm is the simple line generation algorithm.
 
 Now let's look more close the DDA Algorithm. Below is the code at C++.
 ```C++
@@ -82,7 +83,50 @@ The algorithm above describe:
 	<br>
 </p>
 
-The image describes a line drawn on the screen. 
+The image describes a line drawn on the screen using the DDA Algorithm. 
+
+The DA Algorithm only draws in the first quadrant as you can see in the image below and is a problem if you want to draw on other areas of the screen. 
+
+<p align="center">
+	<br>
+	<img src="./prints/interpolationDDA.png"/ width=600px height=400px>
+	<br>
+</p>
+
+#### Bresenham Algorithm
+The Bresenham algorithm is another incremental scan conversion algorithm. The big advantage of this algorithm is that, it uses only integer calculations. Moving across the x axis in unit intervals and at each step choose between two different y coordinates.
+
+Now let's look more close the DDA Algorithm. Below is the code at C++.
+```C++
+void ddaAlgorithm(int x1, int y1, int x2, int y2, std::vector<int>& myRGBA) {
+  float dx = x2-x1;
+  float dy = y2-y1;
+
+  float m = dy/dx;
+  float b = y1 - (m*x1);
+
+  int j = 0;
+  for (size_t i = 0; i < dx; i++) {
+    colorInterpolation(i, &j, dx, &myRGBA);
+    putPixel(x1+i, round(m*(x1+i)+b), myRGBA);
+  }
+}
+```
+The algorithm above describe:
+1. dx is the variation/range between x2 and x1 points.
+2. dy is the variation/range between y2 and y1 points.
+3. m is the coefficient of the line. 
+4. b is the linear coefficient of the line.
+
+<p align="center">
+	<br>
+	<img src="./prints/lineDDA.png"/ width=600px height=400px>
+	<br>
+</p>
+
+The image describes a line drawn on the screen using the DDA Algorithm
+
+
 Toolkit: OpenGL | Glut | Computer Graphic | C++
 
 ## Requirements ###
