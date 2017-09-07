@@ -41,7 +41,11 @@ The function above describe:
 
 The RGBA standard  to require four bytes. Each byte it is destined for the primaries color RGBA that mean RED, GREEN, BLUE and ALPHA. With this function we can draw a point in the screen like the below picture show it.
 
-
+<p align="center">
+	<br>
+	<img src="./prints/putPixel.png"/ width=600px height=400px>
+	<br>
+</p>
 
 Toolkit: OpenGL | Glut | Computer Graphic | C++
 
