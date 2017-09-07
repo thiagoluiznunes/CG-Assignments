@@ -30,7 +30,7 @@ $> make
 * Run the created executable file.
 
 ```
-$> ./cg-first-task
+$> ./cg-task
 ```
 
 ## Contributors
