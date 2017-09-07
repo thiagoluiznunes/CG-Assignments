@@ -6,7 +6,7 @@ Rasterization Algorithms
 
 * [Introduction](#introduction)
 * [Points Rasterization](#points-rasterization)
-* []()
+* [Lines Rasterization](#lines-rasterization)
 * []()
 * []()
 
@@ -44,6 +44,41 @@ The RGBA standard  to require four bytes. Each byte it is destined for the prima
 <p align="center">
 	<br>
 	<img src="./prints/putPixel.png"/ width=400px height=250px>
+	<br>
+</p>
+
+---
+
+### Lines Rasterization
+
+#### Digital Differential Analyzer (DDA)
+Digital Differential Analyzer (DDA) algorithm is the simple line generation algorithm which is explained step by step here.
+
+Now let's look more close the DDA Algorithm. Below is the code at C++.
+```C++
+void ddaAlgorithm(int x1, int y1, int x2, int y2, std::vector<int>& myRGBA) {
+  float dx = x2-x1;
+  float dy = y2-y1;
+
+  float m = dy/dx;
+  float b = y1 - (m*x1);
+
+  int j = 0;
+  for (size_t i = 0; i < dx; i++) {
+    colorInterpolation(i, &j, dx, &myRGBA);
+    putPixel(x1+i, round(m*(x1+i)+b), myRGBA);
+  }
+}
+```
+The algorithm above describe:
+1. dx is the variation/range between x2 and x1 points.
+2. dy is the variation/range between y2 and y1 points.
+3. m is the coefficient of the line. 
+4. b is the linear coefficient of the line.
+
+<p align="center">
+	<br>
+	<img src="./prints/lineDDA.png"/ width=400px height=250px>
 	<br>
 </p>
 
