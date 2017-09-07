@@ -10,10 +10,11 @@ Rasterization Algorithms
 * [Bresenham Algorithm](#bresenham-algorithm)
 * [Conclusion](#conclusion)
 * [References](#references)
+* [Build Instructions](#build-instructions)
 
 ---
 
-## Introduction
+### Introduction
 This project has as objective the implementation of rasterization algorithms to perform the rendering of points and lines. The motivation for this task is to complement the note for the Computer Graphics discipline taught by the teacher Christian Pagot in Federal University of Paraiba.
 
 ---
