@@ -130,7 +130,7 @@ However, the algorithm above only draws lines for the first octant like the DDA,
 </p>
 <p align="center">
 	<br>
-	<img src="./prints/bresenhamAlgorithm.png"/ width=510px height=540px>
+	<img src="./prints/bresenhamI.png"/ width=510px height=540px>
 	<br>
 </p>
 
