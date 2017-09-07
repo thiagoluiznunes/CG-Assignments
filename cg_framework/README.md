@@ -79,7 +79,7 @@ The algorithm above describe:
 
 <p align="center">
 	<br>
-	<img src="./prints/lineDDA.png"/ width=600px height=400px>
+	<img src="./prints/lineDDA.png"/ width=510px height=540px>
 	<br>
 </p>
 
@@ -89,7 +89,7 @@ The DA Algorithm only draws in the first quadrant as you can see in the image be
 
 <p align="center">
 	<br>
-	<img src="./prints/interpolationDDA.png"/ width=600px height=400px>
+	<img src="./prints/interpolationDDA.png"/ width=510px height=540px>
 	<br>
 </p>
 
@@ -120,7 +120,7 @@ The algorithm above describe:
 
 <p align="center">
 	<br>
-	<img src="./prints/lineDDA.png"/ width=600px height=400px>
+	<img src="./prints/lineDDA.png"/ width=510px height=540px>
 	<br>
 </p>
 
