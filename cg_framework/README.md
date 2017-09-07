@@ -27,7 +27,7 @@ The main concept of the rasterization is the draw point function in a screen. Th
 </p>
 
 Now let's look more close the function destined to execute the point rasterization. Below is the code at C++.
-```
+```C++
 void putPixel(int xWidth, int yHeight, std::vector<int>& myRGBA) {
 	for (size_t i = 0; i < 4; i++) {
 	FBptr[xWidth*4+i + yHeight*4*IMAGE_WIDTH] = myRGBA.at(i);
