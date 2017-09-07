@@ -39,11 +39,11 @@ The function above describe:
 2. yHeight is the position of the pixel related the screen height.
 3. myRGBA is the color vector related the pixel.
 
-The RGBA standard  to require four bytes. Each byte it is destined for the primaries color RGBA that mean RED, GREEN, BLUE and ALPHA. With this function we can draw a point in the screen like the below picture show it.
+The RGBA standard  to require four bytes. Each byte it is destined for the primaries color RGBA that mean RED, GREEN, BLUE and ALPHA. With this function we can draw a point on the screen like the below picture show it.
 
 <p align="center">
 	<br>
-	<img src="./prints/putPixel.png"/ width=400px height=250px>
+	<img src="./prints/putPixel.png"/ width=600px height=400px>
 	<br>
 </p>
 
@@ -78,10 +78,11 @@ The algorithm above describe:
 
 <p align="center">
 	<br>
-	<img src="./prints/lineDDA.png"/ width=400px height=250px>
+	<img src="./prints/lineDDA.png"/ width=600px height=400px>
 	<br>
 </p>
 
+The image describes a line drawn on the screen. 
 Toolkit: OpenGL | Glut | Computer Graphic | C++
 
 ## Requirements ###
