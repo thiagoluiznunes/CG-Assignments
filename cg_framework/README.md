@@ -34,12 +34,12 @@ void putPixel(int xWidth, int yHeight, std::vector<int>& myRGBA) {
 	}
 }
 ```
-The function above to describle:
+The function above describe:
 1. xWidth is the position of the pixel related the screen width.
 2. yHeight is the position of the pixel related the screen height.
 3. myRGBA is the color vector related the pixel.
 
-The RGBA standard  to require four bytes. Each byte it is destined for the primaries color RGBA that mean RED, GREEN, BLUE and ALPHA.
+The RGBA standard  to require four bytes. Each byte it is destined for the primaries color RGBA that mean RED, GREEN, BLUE and ALPHA. With this function we can draw a point in the screen like the below picture show it.
 
 
 
