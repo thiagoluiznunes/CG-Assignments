@@ -33,8 +33,15 @@ void putPixel(int xWidth, int yHeight, std::vector<int>& myRGBA) {
 	FBptr[xWidth*4+i + yHeight*4*IMAGE_WIDTH] = myRGBA.at(i);
 	}
 }
-	
 ```
+The function above to describle:
+1. xWidth is the position of the pixel related the screen width.
+2. yHeight is the position of the pixel related the screen height.
+3. myRGBA is the color vector related the pixel.
+
+The RGBA standard  to require four bytes. Each byte it is destined for the primaries color RGBA that mean RED, GREEN, BLUE and ALPHA.
+
+
 
 Toolkit: OpenGL | Glut | Computer Graphic | C++
 
