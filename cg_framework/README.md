@@ -18,7 +18,15 @@ This project has as objective the implementation of rasterization algorithms to 
 ---
 
 ### Points Rasterization
-The main concept of the rasterization is the draw point function in a screen. Through this function you can be able to draw vector images. To realize this operation have must to activate the display pixels with specific colors to draw the image requested.
+The main concept of the rasterization is the draw point function in a screen. Through this function you can be able to draw vector images. To realize this operation have must to activate the display pixels with specific colors to draw the image requested. The image below will to explain better how work the screen rasterization.
+
+<p align="center">
+	<br>
+	<img src="./prints/matrix.png"/ width=600px height=400px>
+	<h5 align="center">Figura 1 - Imagem retirada dos slides da aula 2 - Rasterization</h5>
+	<br>
+</p>
+
 
 Toolkit: OpenGL | Glut | Computer Graphic | C++
 
