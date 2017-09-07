@@ -1,6 +1,24 @@
 # CG-First-Task
 ---
-At building
+Rasterization Algorithms
+
+## Menu
+
+* [Introduction](#introduction)
+* [Points Rasterization](#points-rasterization)
+* []()
+* []()
+* []()
+
+---
+
+## Introduction
+This project has as objective the implementation of rasterization algorithms to perform the rendering of points and lines. The motivation for this task is to complement the note for the Computer Graphics discipline taught by the teacher Christian Pagot in Federal University of Paraiba.
+
+---
+
+### Points Rasterization
+The main concept of the rasterization is the draw point function in a screen. Through this function you can be able to draw vector images. To realize this operation have must to activate the display pixels with specific colors to draw the image requested.
 
 Toolkit: OpenGL | Glut | Computer Graphic | C++
 
