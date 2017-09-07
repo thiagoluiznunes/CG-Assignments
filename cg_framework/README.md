@@ -96,31 +96,36 @@ The DA Algorithm only draws in the first quadrant as you can see in the image be
 #### Bresenham Algorithm
 The Bresenham algorithm is another incremental scan conversion algorithm. The big advantage of this algorithm is that, it uses only integer calculations. Moving across the x axis in unit intervals and at each step choose between two different y coordinates.
 
-Now let's look more close the DDA Algorithm. Below is the code at C++.
+Now let's look more close the Bresenham Algorithm. Below is the code at C++.
 ```C++
-void ddaAlgorithm(int x1, int y1, int x2, int y2, std::vector<int>& myRGBA) {
-  float dx = x2-x1;
-  float dy = y2-y1;
-
-  float m = dy/dx;
-  float b = y1 - (m*x1);
+  int dx = x2-x1;
+  int dy = y2-y1;
+  int d = 2*dy-dx;
+  int incr_e = 2 * dy;
+  int incr_ne = 2 * (dy-dx);
+  int x = x1;
+  int y = y1;
+  putPixel(x,y, myRGBA);
 
   int j = 0;
-  for (size_t i = 0; i < dx; i++) {
-    colorInterpolation(i, &j, dx, &myRGBA);
-    putPixel(x1+i, round(m*(x1+i)+b), myRGBA);
+  while(x < x2) {
+    if(d <= 0) {
+      d += incr_e;
+      x++;
+    } else {
+      d += incr_ne;
+      x++;
+      y++;
+    }
+    colorInterpolation(x, &j, x2, &myRGBA);
+    putPixel(x, y, myRGBA);
   }
-}
 ```
-The algorithm above describe:
-1. dx is the variation/range between x2 and x1 points.
-2. dy is the variation/range between y2 and y1 points.
-3. m is the coefficient of the line. 
-4. b is the linear coefficient of the line.
+However, the algorithm above only draws lines for the first octant like the DDA, that is, lines that are between 0º and 45º. To better exemplify a screenshot of the above running algorithm can be seen below.
 
 <p align="center">
 	<br>
-	<img src="./prints/lineDDA.png"/ width=510px height=540px>
+	<img src="./prints/bresenhamAlgorithm.png"/ width=510px height=540px>
 	<br>
 </p>
 
