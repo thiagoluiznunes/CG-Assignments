@@ -23,10 +23,18 @@ The main concept of the rasterization is the draw point function in a screen. Th
 <p align="center">
 	<br>
 	<img src="./prints/matrix.png"/ width=600px height=400px>
-	<h5 align="center">Figura 1 - Imagem retirada dos slides da aula 2 - Rasterization</h5>
 	<br>
 </p>
 
+Now let's look more close the function destined to execute the point rasterization. Below is the code at C++.
+```
+void putPixel(int xWidth, int yHeight, std::vector<int>& myRGBA) {
+	for (size_t i = 0; i < 4; i++) {
+	FBptr[xWidth*4+i + yHeight*4*IMAGE_WIDTH] = myRGBA.at(i);
+	}
+}
+	
+```
 
 Toolkit: OpenGL | Glut | Computer Graphic | C++
 
