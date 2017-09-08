@@ -5,7 +5,7 @@
 #include <vector>
 #include <iostream>
 #include <string>
-#include <math.h>
+#include <cmath>
 
 //*****************************************************************************
 // Defina aqui as suas funções gráficas
@@ -65,35 +65,73 @@ void bresenhamAlgorithm(std::vector<int>& coordinates, std::vector<int>& myRGBA)
 
   int dx = x2-x1;
   int dy = y2-y1;
-  int d = 2*dy-dx;
-  int incr_e = 2 * dy;
-  int incr_ne = 2 * (dy-dx);
+
+  // int d = 2*dy-dx;
+  // int incr_e = 2 * dy;
+  // int incr_ne = 2 * (dy-dx);
+
+  int d;
+  int incr_e;
+  int incr_ne;
   int x = x1;
   int y = y1;
   putPixel(x,y, myRGBA);
 
   int j = 0;
-  while(x < x2) {
-    if(d <= 0) {
-      d += incr_e;
-      x++;
-    } else {
-      d += incr_ne;
-      x++;
-      y++;
+
+  //0º a 90º
+  if(dx > 0 && dy > 0) {
+    //0º a 45º
+    if(abs(dx) > abs(dy)) {
+      std::cout << "0 a 45" << '\n';
+      d = 2*dy-dx;
+      incr_e = 2 * dy;
+      incr_ne = 2 * (dy-dx);
+
+      while(x < x2) {
+        if(d < 0) {
+          d += incr_e;
+          x++;
+        } else {
+          d += incr_ne;
+          x++;
+          y++;
+        }
+        colorInterpolation(x, &j, x2, &myRGBA);
+        putPixel(x, y, myRGBA);
+      }
     }
-    colorInterpolation(x, &j, x2, &myRGBA);
-    putPixel(x, y, myRGBA);
+    //45º a 90º
+    else {
+      std::cout << "45 a 90" << '\n';
+      d = dy-2*dx;
+      incr_e = 2*(dy-dx);
+      incr_ne = -2*dx;
+
+      while(abs(x) < abs(x2)) {
+        if(d < 0) {
+          d += incr_e;
+          x++;
+          y++;
+        } else {
+          d += incr_ne;
+          y++;
+        }
+        colorInterpolation( abs(x), &j, abs(x2), &myRGBA);
+        putPixel(x, y, myRGBA);
+      }
+    }
   }
-  // int j = 0;
-  // for (size_t i = x1; i < x2; i++) {
-  //   colorInterpolation(i, &j, x2, &myRGBA);
+  // while(x < x2) {
   //   if(d <= 0) {
   //     d += incr_e;
+  //     x++;
   //   } else {
   //     d += incr_ne;
+  //     x++;
   //     y++;
   //   }
+  //   colorInterpolation(x, &j, x2, &myRGBA);
   //   putPixel(x, y, myRGBA);
   // }
 }
