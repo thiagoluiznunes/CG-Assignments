@@ -7,6 +7,9 @@
 #include <string>
 #include <cmath>
 
+#include <chrono>
+#include <thread>
+
 //*****************************************************************************
 // Defina aqui as suas funções gráficas
 //*****************************************************************************
@@ -83,7 +86,7 @@ void bresenhamAlgorithm(std::vector<int>& coordinates, std::vector<int>& myRGBA)
   if(dx > 0 && dy > 0) {
     //0º a 45º
     if(abs(dx) > abs(dy)) {
-      std::cout << "0 a 45" << '\n';
+      std::cout << "0º a 45º" << '\n';
       d = 2*dy-dx;
       incr_e = 2 * dy;
       incr_ne = 2 * (dy-dx);
@@ -103,7 +106,7 @@ void bresenhamAlgorithm(std::vector<int>& coordinates, std::vector<int>& myRGBA)
     }
     //45º a 90º
     else {
-      std::cout << "45 a 90" << '\n';
+      std::cout << "45º a 90º" << '\n';
       d = dy-2*dx;
       incr_e = 2*(dy-dx);
       incr_ne = -2*dx;
@@ -116,6 +119,58 @@ void bresenhamAlgorithm(std::vector<int>& coordinates, std::vector<int>& myRGBA)
         } else {
           d += incr_ne;
           y++;
+        }
+        colorInterpolation( abs(x), &j, abs(x2), &myRGBA);
+        putPixel(x, y, myRGBA);
+      }
+    }
+  }
+  //90º a 180º
+  else if(dx < 0 && dy > 0) {
+    //90º a 135º
+    if(abs(dy) > abs(dx)) {
+      // std::cout << "90º a 135º" << '\n';
+      d = dy+2*dx;
+      incr_e = 2*dx;
+      incr_ne = 2*(dy+dx);
+
+      x = x2;
+      int my = 50;
+      while(abs(y) < abs(y2)) {
+        if(d < 0) {
+          d += incr_ne;
+          x++;
+          // d += incr_e;
+          // y2--;
+          // my--;
+        } else {
+          d += incr_e;
+          y2--;
+          // d += incr_ne;
+          // x++;
+          y2--;
+          // my--;
+        }
+        colorInterpolation( abs(x2), &j, abs(x), &myRGBA);
+        putPixel(x, y2, myRGBA);
+        std::cout << "X:" << x << '\n';
+        std::cout << "Y2:" << y2 << '\n';
+
+      }
+    } else {
+      std::cout << "135º a 180º" << '\n';
+      d = 2*dy+dx;
+      incr_e = 2*(dy+dx);
+      incr_ne = 2*dy;
+
+      while(abs(x) < abs(x2)) {
+        if(d < 0) {
+          d += incr_e;
+          x++;
+          y--;
+        } else {
+          d += incr_ne;
+          x++;
         }
         colorInterpolation( abs(x), &j, abs(x2), &myRGBA);
         putPixel(x, y, myRGBA);

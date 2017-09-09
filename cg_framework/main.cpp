@@ -14,6 +14,8 @@ void MyGlDraw(void)
 
 
 	std::vector<int> coordinatesVector;
+	std::vector<int> coordinatesVector2;
+	std::vector<int> coordinatesVector3;
 	std::vector<int> rgbaVector;
 	// y
 	// ^
@@ -31,8 +33,8 @@ void MyGlDraw(void)
 
 	coordinatesVector.push_back(100); //x1
 	coordinatesVector.push_back(0); //y1
-	coordinatesVector.push_back(200); //x2
-	coordinatesVector.push_back(1); //y2
+	coordinatesVector.push_back(50); //x2
+	coordinatesVector.push_back(200); //y2
 
 	rgbaVector.push_back(0);
 	rgbaVector.push_back(0);
