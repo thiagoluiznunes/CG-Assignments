@@ -10,10 +10,11 @@ Rasterization Algorithms
 * [Bresenham Algorithm](#bresenham-algorithm)
 * [Conclusion](#conclusion)
 * [References](#references)
+* [Build Instructions](#build-instructions)
 
 ---
 
-## Introduction
+### Introduction
 This project has as objective the implementation of rasterization algorithms to perform the rendering of points and lines. The motivation for this task is to complement the note for the Computer Graphics discipline taught by the teacher Christian Pagot in Federal University of Paraiba.
 
 ---
@@ -93,6 +94,8 @@ The DA Algorithm only draws in the first quadrant as you can see in the image be
 	<br>
 </p>
 
+---
+
 #### Bresenham Algorithm
 The Bresenham algorithm is another incremental scan conversion algorithm. The big advantage of this algorithm is that, it uses only integer calculations. Moving across the x axis in unit intervals and at each step choose between two different y coordinates.
 
@@ -128,19 +131,29 @@ However, the algorithm above only draws lines for the first octant like the DDA,
 	<img src="./prints/bresenhamAlgorithm.png"/ width=510px height=540px>
 	<br>
 </p>
+
+Drawing lines with the Bresenham algorithm.
+
 <p align="center">
 	<br>
-	<img src="./prints/bresenhamAlgorithm.png"/ width=510px height=540px>
+	<img src="./prints/bresenhamI.png"/ width=510px height=540px>
 	<br>
 </p>
 
+---
+
 ### Conclusion
 I conclude this project by citing the various difficulties encountered throughout the development of the algorithms due to being the subject of great complexity. Unfortunately I could not complete the project completely, lacking the rasterization of the triangle and the finalization of the Brensenham algorithm in the other octants. However, I believe that the main objective of the project was to achieve learning in relation to the rasterization of points and lines.
+
+---
+
 ### References
 
 https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
 http://www.univasf.edu.br/~jorge.cavalcanti/comput_graf04_prim_graficas2.pdf
 https://www.tutorialspoint.com/computer_graphics/line_generation_algorithm.htm
+
+---
 
 Toolkit: OpenGL | Glut | Computer Graphic | C++
 
