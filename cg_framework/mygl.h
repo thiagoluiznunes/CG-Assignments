@@ -86,7 +86,7 @@ void bresenhamAlgorithm(std::vector<int>& coordinates, std::vector<int>& myRGBA)
   if(dx > 0 && dy > 0) {
     //0º a 45º
     if(abs(dx) > abs(dy)) {
-      std::cout << "0º a 45º" << '\n';
+      // std::cout << "0º a 45º" << '\n';
       d = 2*dy-dx;
       incr_e = 2 * dy;
       incr_ne = 2 * (dy-dx);
@@ -106,7 +106,7 @@ void bresenhamAlgorithm(std::vector<int>& coordinates, std::vector<int>& myRGBA)
     }
     //45º a 90º
     else {
-      std::cout << "45º a 90º" << '\n';
+      // std::cout << "45º a 90º" << '\n';
       d = dy-2*dx;
       incr_e = 2*(dy-dx);
       incr_ne = -2*dx;
@@ -144,27 +144,29 @@ void bresenhamAlgorithm(std::vector<int>& coordinates, std::vector<int>& myRGBA)
         }
         colorInterpolation( abs(x2), &j, abs(x), &myRGBA);
         putPixel(x2, y2, myRGBA);
-        std::cout << "X:" << x << '\n';
-        std::cout << "Y2:" << y2 << '\n';
+        // std::cout << "X:" << x << '\n';
+        // std::cout << "Y2:" << y2 << '\n';
 
       }
     } else {
-      std::cout << "135º a 180º" << '\n';
+      // std::cout << "135º a 180º" << '\n';
       d = 2*dy+dx;
       incr_e = 2*(dy+dx);
       incr_ne = 2*dy;
 
-      while(abs(x) < abs(x2)) {
+      while(abs(x2) < abs(x)) {
         if(d < 0) {
-          d += incr_e;
-          x++;
-          y--;
-        } else {
           d += incr_ne;
-          x++;
+          x2++;
+        } else {
+          d += incr_e;
+          x2++;
+          y2--;
         }
         colorInterpolation( abs(x), &j, abs(x2), &myRGBA);
-        putPixel(x, y, myRGBA);
+        putPixel(x2, y2, myRGBA);
+        // std::cout << "X2:" << x2 << '\n';
+        // std::cout << "Y2:" << y2 << '\n';
       }
     }
   }

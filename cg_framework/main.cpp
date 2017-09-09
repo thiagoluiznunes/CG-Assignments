@@ -31,10 +31,10 @@ void MyGlDraw(void)
 	// 		(x2-x1)
 	// primeiro quadrante = x2-x1 >= y2-y1
 
-	coordinatesVector.push_back(100); //x1
-	coordinatesVector.push_back(0); //y1
-	coordinatesVector.push_back(10); //x2
-	coordinatesVector.push_back(500); //y2
+	coordinatesVector.push_back(200); //x1
+	coordinatesVector.push_back(100); //y1
+	coordinatesVector.push_back(400); //x2
+	coordinatesVector.push_back(101); //y2
 
 	rgbaVector.push_back(0);
 	rgbaVector.push_back(0);
