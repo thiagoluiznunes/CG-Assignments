@@ -134,25 +134,16 @@ void bresenhamAlgorithm(std::vector<int>& coordinates, std::vector<int>& myRGBA)
       incr_e = 2*dx;
       incr_ne = 2*(dy+dx);
 
-      x = x2;
-      int my = 50;
       while(abs(y) < abs(y2)) {
         if(d < 0) {
           d += incr_ne;
-          x++;
-          // d += incr_e;
-          // y2--;
-          // my--;
+          x2++;
         } else {
           d += incr_e;
           y2--;
-          // d += incr_ne;
-          // x++;
-          y2--;
-          // my--;
         }
         colorInterpolation( abs(x2), &j, abs(x), &myRGBA);
-        putPixel(x, y2, myRGBA);
+        putPixel(x2, y2, myRGBA);
         std::cout << "X:" << x << '\n';
         std::cout << "Y2:" << y2 << '\n';
 
