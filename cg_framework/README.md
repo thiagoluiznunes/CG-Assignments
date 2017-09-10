@@ -176,8 +176,13 @@ void drawTriangle(Vertex first, Vertex second, Vertex third, std::vector<int>& r
 
 ---
 
-### Conclusion
-I conclude this project by citing the various difficulties encountered throughout the development of the algorithms due to being the subject of great complexity. Unfortunately I could not complete the project completely, lacking the rasterization of the triangle and the finalization of the Brensenham algorithm in the other octants. However, I believe that the main objective of the project was to achieve learning in relation to the rasterization of points and lines.
+## Conclusion
+
+### Results
+As we can see through the all project is that some results are satisfactory. The project is able to draw pixels, line and basic geometric forms. However there is some bugs in the interpolationColor function, that is, the color sequencies is incorrect and this need a future fix.
+
+### Challenges encountered
+The big concept that how Bresenham Algorithm work was the first challenge to understand but the main was the technique that enable us drawing in all quadrants on screen.
 
 ---
 
