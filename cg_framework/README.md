@@ -158,7 +158,23 @@ Using this technique we have achieved the results below:
 
 ---
 
-### Drawing Triangles
+## Drawing Triangles
+After we solve the problem of the quadrants we can now draw triangles by the fact that we can use all quadrants of the screen.
+```C++
+void drawTriangle(Vertex first, Vertex second, Vertex third, std::vector<int>& rgba) {
+  bresenhamAlgorithm(first, rgba);
+  bresenhamAlgorithm(second, rgba);
+  bresenhamAlgorithm(third, rgba);
+}
+```
+<p align="center">
+	<br>
+	<img src="./prints/triangle.png"/ width=510px height=540px>
+	<h5 align="center">Figure 8 - Triangle representation</h5>
+	<br>
+</p>
+
+---
 
 ### Conclusion
 I conclude this project by citing the various difficulties encountered throughout the development of the algorithms due to being the subject of great complexity. Unfortunately I could not complete the project completely, lacking the rasterization of the triangle and the finalization of the Brensenham algorithm in the other octants. However, I believe that the main objective of the project was to achieve learning in relation to the rasterization of points and lines.
