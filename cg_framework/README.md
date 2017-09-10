@@ -140,6 +140,7 @@ Drawing lines with the Bresenham algorithm.
 	<br>
 </p>
 
+You can see that we have a problem however there are techniques that can draw at all quadrants of screen. this techniques is based on the differences of | DX | and | DY |. As you can see below a better demonstration of this technique.
 ---
 
 ### Conclusion
