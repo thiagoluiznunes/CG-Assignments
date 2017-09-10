@@ -55,16 +55,11 @@ void ddaAlgorithm(Vertex vertex, std::vector<int>& myRGBA) {
 
   int j = 0;
   for (size_t i = 0; i < dx; i++) {
-    // colorInterpolation(i, &j, dx, &myRGBA);
+    colorInterpolation(i, &j, dx, &myRGBA);
     putPixel(x1+i, round(m*(x1+i)+b), myRGBA);
   }
 }
-// void bresenhamAlgorithm(std::vector<int>& coordinates, std::vector<int>& myRGBA) {
 void bresenhamAlgorithm(Vertex vertex, std::vector<int>& myRGBA) {
-  // int x1 = coordinates.at(0);
-  // int y1 = coordinates.at(1);
-  // int x2 = coordinates.at(2);
-  // int y2 = coordinates.at(3);
   int x1 = vertex.getX1();
   int y1 = vertex.getY1();
   int x2 = vertex.getX2();
@@ -78,6 +73,7 @@ void bresenhamAlgorithm(Vertex vertex, std::vector<int>& myRGBA) {
   int x = x1;
   int y = y1;
   int j = 0;
+
   putPixel(x,y, myRGBA);
 
   //0º a 90º
@@ -133,7 +129,7 @@ void bresenhamAlgorithm(Vertex vertex, std::vector<int>& myRGBA) {
   else if(dx < 0 && dy > 0) {
     //90º a 135º
     if(abs(dy) > abs(dx)) {
-      std::cout << "90º a 135º" << '\n';
+      // std::cout << "90º a 135º" << '\n';
       d = dy+2*dx;
       incr_e = 2*dx;
       incr_ne = 2*(dy+dx);
@@ -150,8 +146,8 @@ void bresenhamAlgorithm(Vertex vertex, std::vector<int>& myRGBA) {
         }
         colorInterpolation( abs(y2), &j, abs(x2), &myRGBA);
         putPixel(x2, y2, myRGBA);
-        // std::cout << "X2:" << x2 << '\n';
-        // std::cout << "Y2:" << y2 << '\n';
+        std::cout << "X2:" << x2 << '\n';
+        std::cout << "Y2:" << y2 << '\n';
       }
       j = 0;
     } else {
@@ -181,16 +177,6 @@ void bresenhamAlgorithm(Vertex vertex, std::vector<int>& myRGBA) {
   //180º a 270º
   else if(dx < 0 && dy < 0) {
     std::cout << "DRIBE DO RONADINHO1" << '\n';
-    // x1 = coordinates.at(3);
-    // y1 = coordinates.at(2);
-    // x2 = coordinates.at(1);
-    // y2 = coordinates.at(0);
-    //
-    // coordinates.at(0) = x1;
-    // coordinates.at(1) = y1;
-    // coordinates.at(2) = x2;
-    // coordinates.at(3) = y2;
-
     x1 = vertex.getY2();
     y1 = vertex.getX2();
     x2 = vertex.getY1();
@@ -203,17 +189,7 @@ void bresenhamAlgorithm(Vertex vertex, std::vector<int>& myRGBA) {
   //270º a 360º
   else {
     //dx > 0 dy < 0
-    std::cout << "DRIBE DO RONADINHO2" << '\n';
-    // x1 = coordinates.at(2);
-    // y1 = coordinates.at(3);
-    // x2 = coordinates.at(0);
-    // y2 = coordinates.at(1);
-    //
-    // coordinates.at(0) = x1;
-    // coordinates.at(1) = y1;
-    // coordinates.at(2) = x2;
-    // coordinates.at(3) = y2;
-
+    // std::cout << "DRIBE DO RONADINHO2" << '\n';
     x1 = vertex.getX2();
     y1 = vertex.getY2();
     x2 = vertex.getX1();
@@ -224,11 +200,14 @@ void bresenhamAlgorithm(Vertex vertex, std::vector<int>& myRGBA) {
     bresenhamAlgorithm(v, myRGBA);
   }
 }
-
 void drawTriangle(Vertex first, Vertex second, Vertex third, std::vector<int>& rgba) {
   bresenhamAlgorithm(first, rgba);
   bresenhamAlgorithm(second, rgba);
   bresenhamAlgorithm(third, rgba);
 }
-
+void drawAllQuadrants(std::vector<Vertex> vertex, std::vector<int> rgba) {
+  for (size_t i = 0; i < vertex.size(); i++) {
+    bresenhamAlgorithm(vertex.at(i), rgba);
+  }
+}
 #endif // _MYGL_H_
