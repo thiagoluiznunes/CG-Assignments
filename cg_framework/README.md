@@ -89,7 +89,7 @@ The image describes a line drawn on the screen using the DDA Algorithm.
 	<br>
 </p>
 
-The DA Algorithm only draws in the first quadrant as you can see in the image below and is a problem if you want to draw on other areas of the screen. 
+The DDA Algorithm only draws in the first quadrant as you can see in the image below and is a problem if you want to draw on other areas of the screen. 
 
 <p align="center">
 	<br>
