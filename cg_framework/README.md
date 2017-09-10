@@ -85,7 +85,7 @@ The image describes a line drawn on the screen using the DDA Algorithm.
 <p align="center">
 	<br>
 	<img src="./prints/lineDDA.png"/ width=510px height=540px>
-	<h5 align="center">Figure 3 - Line drawn with DDA.</h5>
+	<h5 align="center">Figure 3 - Line drawn with DDA</h5>
 	<br>
 </p>
 
