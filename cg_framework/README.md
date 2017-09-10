@@ -25,6 +25,7 @@ The main concept of the rasterization is the draw point function in a screen. Th
 <p align="center">
 	<br>
 	<img src="./prints/matrix.png"/ width=600px height=400px>
+	<h5 align="center">Figure 1 - Rasterization representation/h5>
 	<br>
 </p>
 
@@ -46,6 +47,7 @@ The RGBA standard  to require four bytes. Each byte it is destined for the prima
 <p align="center">
 	<br>
 	<img src="./prints/putPixel.png"/ width=600px height=400px>
+	<h5 align="center">Figure 2 - Pixel drawn on screen/h5>
 	<br>
 </p>
 
@@ -81,6 +83,7 @@ The algorithm above describe:
 <p align="center">
 	<br>
 	<img src="./prints/lineDDA.png"/ width=510px height=540px>
+	<h5 align="center">Figure 3 - Line drawn with DDA./h5>
 	<br>
 </p>
 
@@ -91,6 +94,7 @@ The DA Algorithm only draws in the first quadrant as you can see in the image be
 <p align="center">
 	<br>
 	<img src="./prints/interpolationDDA.png"/ width=510px height=540px>
+	<h5 align="center">Figure 4 - Lines in the first quadrant./h5>
 	<br>
 </p>
 
@@ -129,14 +133,7 @@ However, the algorithm above only draws lines for the first octant like the DDA,
 <p align="center">
 	<br>
 	<img src="./prints/bresenhamAlgorithm.png"/ width=510px height=540px>
-	<br>
-</p>
-
-Drawing lines with the Bresenham algorithm.
-
-<p align="center">
-	<br>
-	<img src="./prints/bresenhamI.png"/ width=510px height=540px>
+	<h5 align="center">Figure 5 - Line drawn with Bresenham./h5>
 	<br>
 </p>
 
