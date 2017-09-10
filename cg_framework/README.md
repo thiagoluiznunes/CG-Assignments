@@ -81,14 +81,13 @@ The algorithm above describe:
 3. m is the coefficient of the line. 
 4. b is the linear coefficient of the line.
 
+The image describes a line drawn on the screen using the DDA Algorithm. 
 <p align="center">
 	<br>
 	<img src="./prints/lineDDA.png"/ width=510px height=540px>
 	<h5 align="center">Figure 3 - Line drawn with DDA.</h5>
 	<br>
 </p>
-
-The image describes a line drawn on the screen using the DDA Algorithm. 
 
 The DA Algorithm only draws in the first quadrant as you can see in the image below and is a problem if you want to draw on other areas of the screen. 
 
