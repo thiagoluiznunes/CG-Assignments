@@ -11,17 +11,23 @@ void MyGlDraw(void)
 
 	int height, width;
 	int red, green, blue, alpha;
-	Vertex first(200,200,201,100);
+	std::vector<int> rgbaVector;
 
-	rgbaVector.push_back(0);
+	Vertex first(0,0,400,1);
+	Vertex second(0,0,200,400);
+	Vertex third(400,0,200,400);
+
+	rgbaVector.push_back(255);
 	rgbaVector.push_back(0);
 	rgbaVector.push_back(0);
 	rgbaVector.push_back(1);
 
-	bresenhamAlgorithm(first, rgbaVector);
+	// bresenhamAlgorithm(first, rgbaVector);
+	// bresenhamAlgorithm(second, rgbaVector);
+	// bresenhamAlgorithm(third, rgbaVector);
+	drawTriangle(first, second, third, rgbaVector);
 
-	// putPixel(width, height, rgbaVector);
-	// drawLine(coordinatesVector, rgbaVector);
+	// ddaAlgorithm(first, rgbaVector);
 	//int j;
 	// for (size_t i = 0; i < 500; i++) {
 	// 	coordinatesVector.at(2) = 500-i;
