@@ -142,6 +142,7 @@ You can see that we have a problem however there are techniques that can draw at
 <p align="center">
 	<br>
 	<img src="./prints/bresenhamGeneralization.png"/ width=510px height=540px>
+	<h5 align="center">Figure 6 - Technical representation</h5>
 	<br>
 </p>
 
