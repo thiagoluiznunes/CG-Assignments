@@ -1,7 +1,7 @@
 #include "main.h"
 #include <vector>
 #include "Vertex.h"
-#include "Color.h"
+// #include "Color.h"
 //-----------------------------------------------------------------------------
 void MyGlDraw(void)
 {
@@ -11,24 +11,14 @@ void MyGlDraw(void)
 
 	int height, width;
 	int red, green, blue, alpha;
-
-
-	std::vector<int> coordinatesVector;
-	std::vector<int> coordinatesVector2;
-	std::vector<int> coordinatesVector3;
-	std::vector<int> rgbaVector;
-
-	coordinatesVector.push_back(100); //x1
-	coordinatesVector.push_back(200); //y1
-	coordinatesVector.push_back(500); //x2
-	coordinatesVector.push_back(100); //y2
+	Vertex first(200,200,201,100);
 
 	rgbaVector.push_back(0);
 	rgbaVector.push_back(0);
 	rgbaVector.push_back(0);
 	rgbaVector.push_back(1);
 
-	bresenhamAlgorithm(coordinatesVector, rgbaVector);
+	bresenhamAlgorithm(first, rgbaVector);
 
 	// putPixel(width, height, rgbaVector);
 	// drawLine(coordinatesVector, rgbaVector);
