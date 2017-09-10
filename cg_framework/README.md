@@ -8,6 +8,7 @@ Rasterization Algorithms
 * [Points Rasterization](#points-rasterization)
 * [Digital Differential Analyzer](#digital-differential-analyzer)
 * [Bresenham Algorithm](#bresenham-algorithm)
+* [Drawing Triangles](#drawing-triangles)
 * [Conclusion](#conclusion)
 * [References](#references)
 * [Build Instructions](#build-instructions)
@@ -146,7 +147,18 @@ You can see that we have a problem however there are techniques that can draw at
 	<br>
 </p>
 
+Using this technique we have achieved the results below:
+
+<p align="center">
+	<br>
+	<img src="./prints/allQuadrants.png"/ width=510px height=540px>
+	<h5 align="center">Figure 7 - All quadrants</h5>
+	<br>
+</p>
+
 ---
+
+### Drawing Triangles
 
 ### Conclusion
 I conclude this project by citing the various difficulties encountered throughout the development of the algorithms due to being the subject of great complexity. Unfortunately I could not complete the project completely, lacking the rasterization of the triangle and the finalization of the Brensenham algorithm in the other octants. However, I believe that the main objective of the project was to achieve learning in relation to the rasterization of points and lines.
