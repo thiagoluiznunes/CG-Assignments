@@ -137,7 +137,7 @@ However, the algorithm above only draws lines for the first octant like the DDA,
 	<br>
 </p>
 
-You can see that we have a problem however there are techniques that can draw at all quadrants of screen. this techniques is based on the differences of | DX | and | DY |. As you can see below a better demonstration of this technique.
+You can see that we have a problem however there are techniques that can draw at all quadrants of screen. this techniques is based on the differences of | DX | and | DY | related to 0. As you can see below a better demonstration of this technique.
 
 <p align="center">
 	<br>
