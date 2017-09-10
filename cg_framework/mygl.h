@@ -170,18 +170,36 @@ void bresenhamAlgorithm(std::vector<int>& coordinates, std::vector<int>& myRGBA)
       }
     }
   }
-  // while(x < x2) {
-  //   if(d <= 0) {
-  //     d += incr_e;
-  //     x++;
-  //   } else {
-  //     d += incr_ne;
-  //     x++;
-  //     y++;
-  //   }
-  //   colorInterpolation(x, &j, x2, &myRGBA);
-  //   putPixel(x, y, myRGBA);
-  // }
+  //180º a 270º
+  else if(dx < 0 && dy < 0) {
+    std::cout << "DRIBE DO RONADINHO1" << '\n';
+    x1 = coordinates.at(3);
+    y1 = coordinates.at(2);
+    x2 = coordinates.at(1);
+    y2 = coordinates.at(0);
+
+    coordinates.at(0) = x1;
+    coordinates.at(1) = y1;
+    coordinates.at(2) = x2;
+    coordinates.at(3) = y2;
+
+    bresenhamAlgorithm(coordinates, myRGBA);
+  }
+  //270º a 360º
+  else {
+    std::cout << "DRIBE DO RONADINHO2" << '\n';
+    x1 = coordinates.at(2);
+    y1 = coordinates.at(3);
+    x2 = coordinates.at(0);
+    y2 = coordinates.at(1);
+
+    coordinates.at(0) = x1;
+    coordinates.at(1) = y1;
+    coordinates.at(2) = x2;
+    coordinates.at(3) = y2;
+
+    bresenhamAlgorithm(coordinates, myRGBA);
+  }
 }
 
 #endif // _MYGL_H_
