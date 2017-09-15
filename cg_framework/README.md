@@ -181,7 +181,7 @@ void drawTriangle(Vertex first, Vertex second, Vertex third, std::vector<int>& r
 ## Conclusion
 
 ### Results
-As we can see that all project give satisfactory results and is able to draw pixels, line and basic geometric forms. However there are some bugs in the interpolationColor function, that is, the color sequences are not perfect and this needs a future fix.
+As we can see that the whole project gives satisfactory results and is able to draw pixels, lines and basic geometric shapes. However, there are some bugs in the interpolationColor function, meaning the color strings are not perfect and this needs a future solution.
 
 ### Challenges encountered
 The big concept that how Bresenham Algorithm work was the first challenge to understand but the main was the technique that enable us drawing in all quadrants on screen.
