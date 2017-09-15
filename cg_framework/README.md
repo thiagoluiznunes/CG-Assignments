@@ -57,6 +57,7 @@ The RGBA standard  to require four bytes. Each byte it is destined for the prima
 ---
 
 ### Lines Rasterization
+The task of drawing a pixel on the screen was a bit easy, right? Now, we have a challenge that is to draw a line and this task is not as easy as you think, but to help us, there are some algorithms that can do this for us, however it is very important to understand them.
 
 #### Digital Differential Analyzer (DDA)
 Digital Differential Analyzer (DDA) algorithm is the simple line generation algorithm.
@@ -180,7 +181,7 @@ void drawTriangle(Vertex first, Vertex second, Vertex third, std::vector<int>& r
 ## Conclusion
 
 ### Results
-As we can see through the all project is that some results are satisfactory. The project is able to draw pixels, line and basic geometric forms. However there is some bugs in the interpolationColor function, that is, the color sequencies is incorrect and this need a future fix.
+As we can see that all project give satisfactory results and is able to draw pixels, line and basic geometric forms. However there are some bugs in the interpolationColor function, that is, the color sequences are not perfect and this needs a future fix.
 
 ### Challenges encountered
 The big concept that how Bresenham Algorithm work was the first challenge to understand but the main was the technique that enable us drawing in all quadrants on screen.
