@@ -9,43 +9,67 @@ void MyGlDraw(void)
 	//*************************************************************************
 
 	int height, width;
-	std::vector<int> rgbaVector;
+	std::vector<int> color1, color2, color3;
 
 	//RGBA Color
-	rgbaVector.push_back(255);
-	rgbaVector.push_back(0);
-	rgbaVector.push_back(0);
-	rgbaVector.push_back(1);
+	color1.push_back(255);
+	color1.push_back(0);
+	color1.push_back(0);
+	color1.push_back(1);
 
+	color2.push_back(255);
+	color2.push_back(0);
+	color2.push_back(0);
+	color2.push_back(1);
+
+	color3.push_back(0);
+	color3.push_back(0);
+	color3.push_back(0);
+	color3.push_back(1);
+
+	//Draw Line
+	Vertex first(50,50,350,51);
+	bresenhamAlgorithm(first, color1);
+
+	// for (size_t i = 0; i < 50; i++) {
+	// 	for (size_t j = 0; j < 400; j++) {
+	// 		putPixel(j, i, color1);
+	// 	}
+	// }
+
+	Vertex second(50,50,200,400);
+	bresenhamAlgorithm(second, color2);
+	Vertex third(400,50,200,400);
+	bresenhamAlgorithm(third, color3);
 	//Triangle
-	Vertex first(0,0,400,1);
-	Vertex second(0,0,200,400);
-	Vertex third(400,0,200,400);
-	drawTriangle(first, second, third, rgbaVector);
+	// Vertex first(0,0,400,1);
+	// Vertex second(0,0,200,400);
+	// Vertex third(400,0,200,400);
+	// drawTriangle(first, second, third, color1);
 
 	//All Quadrants
 
-	std::vector<Vertex> array;
+	// std::vector<Vertex> array;
+	//
+	// Vertex _45(200,200,400,400);
+	// Vertex _90(200,200,201,400);
+	// Vertex _135(200,200,0,400);
+	// Vertex _180(200,200,0,201);
+	// Vertex _225(200,200,0,0);
+	// Vertex _270(200,0,201,200);
+	// Vertex _315(400,0,200,200);
+	// Vertex _360(200,200,400,201);
+	//
+	// array.push_back(_45);
+	// array.push_back(_90);
+	// array.push_back(_135);
+	// array.push_back(_180);
+	// array.push_back(_225);
+	// array.push_back(_270);
+	// array.push_back(_315);
+	// array.push_back(_360);
 
-	Vertex _45(200,200,400,400);
-	Vertex _90(200,200,201,400);
-	Vertex _135(200,200,0,400);
-	Vertex _180(200,200,0,201);
-	Vertex _225(200,200,0,0);
-	Vertex _270(200,0,201,200);
-	Vertex _315(400,0,200,200);
-	Vertex _360(200,200,400,201);
-
-	array.push_back(_45);
-	array.push_back(_90);
-	array.push_back(_135);
-	array.push_back(_180);
-	array.push_back(_225);
-	array.push_back(_270);
-	array.push_back(_315);
-	array.push_back(_360);
-
-	// drawAllQuadrants(array, rgbaVector);
+	// drawAllQuadrants(array, color1);
 }
 //-----------------------------------------------------------------------------
 int main(int argc, char **argv)

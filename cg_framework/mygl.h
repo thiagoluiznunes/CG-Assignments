@@ -17,18 +17,6 @@ void putPixel(int xWidth, int yHeight, std::vector<int>& myRGBA) {
     FBptr[xWidth*4+i + yHeight*4*IMAGE_WIDTH] = myRGBA.at(i);
   }
 }
-
-void drawLine(std::vector<int>& coordinates, std::vector<int>& myRGBA) {
-  if(coordinates.at(1) == coordinates.at(3)) {
-    int s = coordinates.at(0) - coordinates.at(2);
-    if(s < 0) {
-      s *= -1;
-    }
-    for (size_t i = 0; i < s; i++) {
-      putPixel(coordinates.at(0) + i, coordinates.at(1), myRGBA);
-    }
-  }
-}
 void colorInterpolation(int i, int *j, int dx, std::vector<int>* myRGBA) {
   if(i < dx/2) {
     myRGBA->at(0) = 255-i;
@@ -74,6 +62,8 @@ void bresenhamAlgorithm(Vertex vertex, std::vector<int>& myRGBA) {
   int y = y1;
   int j = 0;
 
+  int ranged = 0;
+  int aux = 0;
   putPixel(x,y, myRGBA);
 
   //0º a 90º
@@ -85,6 +75,7 @@ void bresenhamAlgorithm(Vertex vertex, std::vector<int>& myRGBA) {
       incr_e = 2 * dy;
       incr_ne = 2 * (dy-dx);
 
+      ranged = x2-x;
       while(x < x2) {
         if(d < 0) {
           d += incr_e;
@@ -94,8 +85,9 @@ void bresenhamAlgorithm(Vertex vertex, std::vector<int>& myRGBA) {
           x++;
           y++;
         }
-        colorInterpolation(x, &j, x2, &myRGBA);
+        colorInterpolation(aux, &j, ranged, &myRGBA);
         putPixel(x, y, myRGBA);
+        aux++;
         // std::cout << "X:" << x << '\n';
         // std::cout << "Y:" << y << '\n';
       }
@@ -108,6 +100,7 @@ void bresenhamAlgorithm(Vertex vertex, std::vector<int>& myRGBA) {
       incr_e = 2*(dy-dx);
       incr_ne = -2*dx;
 
+      ranged = abs(y2) - abs(y1);
       while(abs(y) < abs(y2)) {
         if(d < 0) {
           d += incr_e;
@@ -117,8 +110,9 @@ void bresenhamAlgorithm(Vertex vertex, std::vector<int>& myRGBA) {
           d += incr_ne;
           y++;
         }
-        colorInterpolation( abs(x), &j, abs(x2), &myRGBA);
+        colorInterpolation(aux, &j, ranged, &myRGBA);
         putPixel(x, y, myRGBA);
+        aux++;
         // std::cout << "X:" << x << '\n';
         // std::cout << "Y:" << y << '\n';
       }
@@ -134,6 +128,7 @@ void bresenhamAlgorithm(Vertex vertex, std::vector<int>& myRGBA) {
       incr_e = 2*dx;
       incr_ne = 2*(dy+dx);
 
+      ranged = abs(y2) - abs(y);
       while(abs(y) < abs(y2)) {
         if(d < 0) {
           d += incr_ne;
@@ -144,19 +139,21 @@ void bresenhamAlgorithm(Vertex vertex, std::vector<int>& myRGBA) {
           y2--;
           x2++;
         }
-        colorInterpolation( abs(y2), &j, abs(x2), &myRGBA);
+        colorInterpolation(aux, &j, ranged, &myRGBA);
         putPixel(x2, y2, myRGBA);
-        std::cout << "X2:" << x2 << '\n';
-        std::cout << "Y2:" << y2 << '\n';
+        aux++;
+        // std::cout << "X2:" << x2 << '\n';
+        // std::cout << "Y2:" << y2 << '\n';
       }
       j = 0;
+
     } else {
       std::cout << "135º a 180º" << '\n';
       d = 2*dy+dx;
       incr_e = 2*(dy+dx);
       incr_ne = 2*dy;
 
-      // x2 = 0;
+      ranged = abs(x) - abs(x2);
       while(abs(x2) < abs(x)) {
         if(d < 0) {
           d += incr_ne;
@@ -166,8 +163,9 @@ void bresenhamAlgorithm(Vertex vertex, std::vector<int>& myRGBA) {
           x2++;
           y2--;
         }
-        colorInterpolation( abs(x), &j, abs(x2), &myRGBA);
+        colorInterpolation(aux, &j, ranged, &myRGBA);
         putPixel(x2, y2, myRGBA);
+        aux++;
         // std::cout << "X2:" << x2 << '\n';
         // std::cout << "Y2:" << y2 << '\n';
       }

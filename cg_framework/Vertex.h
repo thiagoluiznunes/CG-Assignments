@@ -2,7 +2,6 @@
 #define VERTEX_H
 
 #include "definitions.h"
-#include "Color.h"
 
 class Vertex {
 private:
