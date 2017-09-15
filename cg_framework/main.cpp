@@ -9,7 +9,7 @@ void MyGlDraw(void)
 	//*************************************************************************
 
 	int height, width;
-	std::vector<int> color1, color2, color3;
+	std::vector<int> color1, color2, color3, color4;
 
 	//RGBA Color
 	color1.push_back(255);
@@ -17,30 +17,16 @@ void MyGlDraw(void)
 	color1.push_back(0);
 	color1.push_back(1);
 
-	color2.push_back(255);
 	color2.push_back(0);
+	color2.push_back(255);
 	color2.push_back(0);
 	color2.push_back(1);
 
 	color3.push_back(0);
 	color3.push_back(0);
-	color3.push_back(0);
+	color3.push_back(255);
 	color3.push_back(1);
 
-	//Draw Line
-	Vertex first(50,50,350,51);
-	bresenhamAlgorithm(first, color1);
-
-	// for (size_t i = 0; i < 50; i++) {
-	// 	for (size_t j = 0; j < 400; j++) {
-	// 		putPixel(j, i, color1);
-	// 	}
-	// }
-
-	Vertex second(50,50,200,400);
-	bresenhamAlgorithm(second, color2);
-	Vertex third(400,50,200,400);
-	bresenhamAlgorithm(third, color3);
 	//Triangle
 	// Vertex first(0,0,400,1);
 	// Vertex second(0,0,200,400);
