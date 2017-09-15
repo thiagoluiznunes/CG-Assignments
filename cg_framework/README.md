@@ -8,6 +8,7 @@ Rasterization Algorithms
 * [Points Rasterization](#points-rasterization)
 * [Digital Differential Analyzer](#digital-differential-analyzer)
 * [Bresenham Algorithm](#bresenham-algorithm)
+* [Drawing Triangles](#drawing-triangles)
 * [Conclusion](#conclusion)
 * [References](#references)
 * [Build Instructions](#build-instructions)
@@ -15,12 +16,14 @@ Rasterization Algorithms
 ---
 
 ### Introduction
-This project has as objective the implementation of rasterization algorithms to perform the rendering of points and lines. The motivation for this task is to complement the note for the Computer Graphics discipline taught by the teacher Christian Pagot in Federal University of Paraiba.
+Actually  what does this article say about? Well, it will describle what Rasterization Alogirthms are and how they are implemented. We will see two known algorithms , the Bresenham Algorithm and Digital Differential Analyzer Algorithm. The article has as objective the implementation of rasterization algorithms to perform the rendering of points and lines.The motivation for this task is to complement the note for the Computer Graphics discipline taught by the teacher Christian Pagot in Federal University of Paraiba.
 
 ---
 
 ### Points Rasterization
-The main concept of the rasterization is the draw point function in a screen. Through this function you can be able to draw vector images. To realize this operation have must to activate the display pixels with specific colors to draw the image requested. The image below will to explain better how work the screen rasterization.
+"Approximation of mathematical primitives, crescribed in terms of vertices on a Cartesian grid, by sets of pixels of the appropriate intensity of gray or color.”— Foley et. al
+
+That is, Rasterization is the technique of taking an image described in a vector graphics format and transform it into a set of pixels for output on a screen. Through this technique you can be able to draw vector images. To realize this operation have must to activate the display pixels with specific colors to draw the image requested. The image below will to explain better how work the screen rasterization.
 
 <p align="center">
 	<br>
@@ -29,7 +32,7 @@ The main concept of the rasterization is the draw point function in a screen. Th
 	<br>
 </p>
 
-Now let's look more close the function destined to execute the point rasterization. Below is the code at C++.
+Now let's look more close the function destined to execute the point rasterization.
 ```C++
 void putPixel(int xWidth, int yHeight, std::vector<int>& myRGBA) {
 	for (size_t i = 0; i < 4; i++) {
@@ -80,16 +83,15 @@ The algorithm above describe:
 3. m is the coefficient of the line. 
 4. b is the linear coefficient of the line.
 
+The image describes a line drawn on the screen using the DDA Algorithm. 
 <p align="center">
 	<br>
 	<img src="./prints/lineDDA.png"/ width=510px height=540px>
-	<h5 align="center">Figure 3 - Line drawn with DDA.</h5>
+	<h5 align="center">Figure 3 - Line drawn with DDA</h5>
 	<br>
 </p>
 
-The image describes a line drawn on the screen using the DDA Algorithm. 
-
-The DA Algorithm only draws in the first quadrant as you can see in the image below and is a problem if you want to draw on other areas of the screen. 
+The DDA Algorithm only draws in the first quadrant as you can see in the image below and is a problem if you want to draw on other areas of the screen. 
 
 <p align="center">
 	<br>
@@ -137,7 +139,7 @@ However, the algorithm above only draws lines for the first octant like the DDA,
 	<br>
 </p>
 
-You can see that we have a problem however there are techniques that can draw at all quadrants of screen. this techniques is based on the differences of | DX | and | DY |. As you can see below a better demonstration of this technique.
+You can see that we have a problem however there are techniques that can draw at all quadrants of screen. this techniques is based on the differences of | DX | and | DY | related to 0. As you can see below a better demonstration of this technique.
 
 <p align="center">
 	<br>
@@ -146,10 +148,42 @@ You can see that we have a problem however there are techniques that can draw at
 	<br>
 </p>
 
+Using this technique we have achieved the results below:
+
+<p align="center">
+	<br>
+	<img src="./prints/allQuadrants.png"/ width=510px height=540px>
+	<h5 align="center">Figure 7 - All quadrants</h5>
+	<br>
+</p>
+
 ---
 
-### Conclusion
-I conclude this project by citing the various difficulties encountered throughout the development of the algorithms due to being the subject of great complexity. Unfortunately I could not complete the project completely, lacking the rasterization of the triangle and the finalization of the Brensenham algorithm in the other octants. However, I believe that the main objective of the project was to achieve learning in relation to the rasterization of points and lines.
+## Drawing Triangles
+After we solve the problem of the quadrants we can now draw triangles by the fact that we can use all quadrants of the screen.
+```C++
+void drawTriangle(Vertex first, Vertex second, Vertex third, std::vector<int>& rgba) {
+  bresenhamAlgorithm(first, rgba);
+  bresenhamAlgorithm(second, rgba);
+  bresenhamAlgorithm(third, rgba);
+}
+```
+<p align="center">
+	<br>
+	<img src="./prints/triangle.png"/ width=510px height=540px>
+	<h5 align="center">Figure 8 - Triangle representation</h5>
+	<br>
+</p>
+
+---
+
+## Conclusion
+
+### Results
+As we can see through the all project is that some results are satisfactory. The project is able to draw pixels, line and basic geometric forms. However there is some bugs in the interpolationColor function, that is, the color sequencies is incorrect and this need a future fix.
+
+### Challenges encountered
+The big concept that how Bresenham Algorithm work was the first challenge to understand but the main was the technique that enable us drawing in all quadrants on screen.
 
 ---
 
