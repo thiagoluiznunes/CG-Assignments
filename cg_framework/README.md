@@ -62,7 +62,7 @@ The task of drawing a pixel on the screen was a bit easy, right? Now, we have a 
 #### Digital Differential Analyzer (DDA)
 Digital Differential Analyzer (DDA) algorithm is the simple line generation algorithm.
 
-Now let's look more close the DDA Algorithm. Below is the code at C++.
+Now let's look more close the DDA Algorithm.
 ```C++
 void ddaAlgorithm(int x1, int y1, int x2, int y2, std::vector<int>& myRGBA) {
   float dx = x2-x1;
