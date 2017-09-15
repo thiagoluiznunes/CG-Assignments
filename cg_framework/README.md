@@ -32,7 +32,7 @@ That is, Rasterization is the technique of taking an image described in a vector
 	<br>
 </p>
 
-Now let's look more close the function destined to execute the point rasterization. Below is the code at C++.
+Now let's look more close the function destined to execute the point rasterization.
 ```C++
 void putPixel(int xWidth, int yHeight, std::vector<int>& myRGBA) {
 	for (size_t i = 0; i < 4; i++) {
