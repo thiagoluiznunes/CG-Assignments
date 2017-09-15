@@ -105,7 +105,7 @@ The DDA Algorithm only draws in the first quadrant as you can see in the image b
 #### Bresenham Algorithm
 The Bresenham algorithm is another incremental scan conversion algorithm. The big advantage of this algorithm is that, it uses only integer calculations. Moving across the x axis in unit intervals and at each step choose between two different y coordinates.
 
-Now let's look more close the Bresenham Algorithm. Below is the code at C++.
+Now let's look more close the Bresenham Algorithm.
 ```C++
   int dx = x2-x1;
   int dy = y2-y1;
