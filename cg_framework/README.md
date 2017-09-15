@@ -16,12 +16,14 @@ Rasterization Algorithms
 ---
 
 ### Introduction
-This project has as objective the implementation of rasterization algorithms to perform the rendering of points and lines. The motivation for this task is to complement the note for the Computer Graphics discipline taught by the teacher Christian Pagot in Federal University of Paraiba.
+Actually  what does this article say about? Well, it will describle what Rasterization Alogirthms are and how they are implemented. We will see two known algorithms , the Bresenham Algorithm and Digital Differential Analyzer Algorithm. The article has as objective the implementation of rasterization algorithms to perform the rendering of points and lines.The motivation for this task is to complement the note for the Computer Graphics discipline taught by the teacher Christian Pagot in Federal University of Paraiba.
 
 ---
 
 ### Points Rasterization
-The main concept of the rasterization is the draw point function in a screen. Through this function you can be able to draw vector images. To realize this operation have must to activate the display pixels with specific colors to draw the image requested. The image below will to explain better how work the screen rasterization.
+"Approximation of mathematical primitives, crescribed in terms of vertices on a Cartesian grid, by sets of pixels of the appropriate intensity of gray or color.”— Foley et. al
+
+That is, Rasterization is the technique of taking an image described in a vector graphics format and transform it into a set of pixels for output on a screen. Through this technique you can be able to draw vector images. To realize this operation have must to activate the display pixels with specific colors to draw the image requested. The image below will to explain better how work the screen rasterization.
 
 <p align="center">
 	<br>
