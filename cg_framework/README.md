@@ -49,7 +49,7 @@ The RGBA standard  to require four bytes. Each byte it is destined for the prima
 
 <p align="center">
 	<br>
-	<img src="./prints/putPixel.png"/ width=600px height=400px>
+	<img src="./prints/putPixel.png"/ width=510px height=540px>
 	<h5 align="center">Figure 2 - Pixel drawn on screen</h5>
 	<br>
 </p>
