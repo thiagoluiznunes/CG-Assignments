@@ -8,7 +8,7 @@ Toolkit: OpenGL | Glut | Computer Graphic | C++
 
 ## Tasks List
 
-* [First Task](https://github.com/ThiagoLuizNunes/CG-Assignments/tree/master/cg_framework)
+* [Rasterization Algorithms](https://github.com/ThiagoLuizNunes/CG-Assignments/tree/master/cg_framework)
 
 ## Contributors
 
