@@ -4,7 +4,7 @@
 
 Repository destined to Computer Graphics discipline containing all the tasks taught in the course.
 
-Toolkit: OpenGL | Glut | Computer Graphic | C++
+Toolkit: OpenGL | Free-Glut | G++
 
 ## Tasks List
 
